@@ -4,7 +4,7 @@
   "description": "A utility for testing console logs",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest --watch && yarn run lint",
+    "test": "yarn run lint && jest --watch",
     "lint": "eslint src",
     "check": "yarn run lint && jest --coverage",
     "build": "babel src --out-dir lib --ignore __tests__",
