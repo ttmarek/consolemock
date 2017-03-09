@@ -50,5 +50,8 @@
         "statements": 90
       }
     }
+  },
+  "dependencies": {
+    "stringify-object": "^3.1.0"
   }
 }
