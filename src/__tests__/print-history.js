@@ -45,7 +45,7 @@ describe('printHistory()', () => {
     mock.groupEnd();
     mock.log('almost done');
     mock.groupEnd();
-    mock.info('fin', 'font-weight: bold;');
+    mock.info('%c fin', 'font-weight: bold;');
 
     expect(mock.printHistory()).toMatchSnapshot();
   });
