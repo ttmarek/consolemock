@@ -18,14 +18,14 @@ A utility for testing console logs
 
 ## Installation
 
-with npm
-```
-npm install --save-dev consolemock
-```
-
 with yarn
 ```
 yarn add --dev consolemock
+```
+
+or with npm
+```
+npm install --save-dev consolemock
 ```
 
 ## Example
@@ -78,12 +78,19 @@ GROUP a group
 INFO %c fin, font-weight: bold;"
 ```
 
-> **TIP**
-> The output of `printHistory` works great with
-> [Jest's snapshot testing](https://facebook.github.io/jest/docs/snapshot-testing.html#content).
-> In your tests, make the mock console, log something, then assert
-> `expect(console.printHistory()).toMatchSnapshot()`
+#### `Chrome dev tools`
 
-----
+<p align="center">
+  <img src="https://cloud.githubusercontent.com/assets/7446702/23824808/8645bbb6-064b-11e7-8469-dc0ed77f799e.png" width="650">
+</p>
 
-![consolemock example](https://cloud.githubusercontent.com/assets/7446702/23824808/8645bbb6-064b-11e7-8469-dc0ed77f799e.png)
+## Usage with Snapshot Testing
+
+The output of `printHistory` works great with
+[Jest's snapshot testing](https://facebook.github.io/jest/docs/snapshot-testing.html#content).
+Create the mock console, log a few messages, then save the output of
+`printHistory` as a snapshot.
+
+<p align="center">
+  <img src="https://cloud.githubusercontent.com/assets/7446702/24484314/93995c3a-14cb-11e7-9075-563d6e200a92.png" width="650">
+</p>
