@@ -5,10 +5,11 @@
 </p>
 
 <p align="center">
-A utility for testing console logs
+A small dev utility for testing console logs
 </p>
 
 <p align="center">
+  <a href="https://www.codacy.com/app/ttmarek/consolemock/dashboard"><img src="https://img.shields.io/codacy/grade/f9594cea653f45d8992bedc95999ed99.svg"></a>
   <a href="https://circleci.com/gh/ttmarek/consolemock"><img src="https://img.shields.io/circleci/project/github/ttmarek/consolemock.svg"></a>
   <a href="https://www.npmjs.com/package/consolemock"><img src="https://img.shields.io/npm/v/consolemock.svg"></a>
   <a href="https://github.com/ttmarek/consolemock/blob/master/LICENSE"><img src="https://img.shields.io/github/license/ttmarek/consolemock.svg"></a>
