@@ -46,7 +46,7 @@ console.log('%c a nested log with styling', 'color: #D63230;');
 console.groupEnd();
 console.log('almost done');
 console.groupEnd();
-console.info('fin', 'font-weight: bold;');
+console.info('%c fin', 'font-weight: bold;');
 ```
 
 #### `console.history();`
