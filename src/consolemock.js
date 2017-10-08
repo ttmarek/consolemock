@@ -48,6 +48,7 @@ function makeConsoleMock(nativeConsole) {
       [printedHistory, printLine(line)].join('\n'), '');
   }
 
+  /* istanbul ignore next */
   function print(...args) {
     if (typeof nativeConsole === 'object') {
       nativeConsole.log(...args);
