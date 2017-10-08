@@ -29,7 +29,7 @@ or with npm
 npm install --save-dev consolemock
 ```
 
-## Example
+### API
 
 ```js
 import { makeConsoleMock } from 'consolemock';
@@ -49,7 +49,7 @@ console.groupEnd();
 console.info('%c fin', 'font-weight: bold;');
 ```
 
-#### `console.history();`
+#### &#x21b3; `console.history();`
 
 ```js
 [
@@ -65,7 +65,7 @@ console.info('%c fin', 'font-weight: bold;');
 ]
 ```
 
-#### `console.printHistory();`
+#### &#x21b3; `console.printHistory();`
 
 ```
 "LOG a message
@@ -79,13 +79,19 @@ GROUP a group
 INFO %c fin, font-weight: bold;"
 ```
 
-#### `Chrome dev tools`
+#### &#x21b3; `console.print(message, [message1, ..., messageN])`
 
-<p align="center">
-  <img src="https://cloud.githubusercontent.com/assets/7446702/23824808/8645bbb6-064b-11e7-8469-dc0ed77f799e.png" width="650">
-</p>
+Use this to bypass the mock and log messages to the console when debugging. In
+order to use this method you **must** provide the `console` object when calling
+`makeConsoleMock`:
 
-## Usage with Snapshot Testing
+```js
+import { makeConsoleMock } from 'consolemock';
+
+console = makeConsoleMock(console);
+```
+
+## **Tip:** Use `consolemock` With Snapshot Testing
 
 The output of `printHistory` works great with
 [Jest's snapshot testing](https://facebook.github.io/jest/docs/snapshot-testing.html#content).

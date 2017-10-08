@@ -21,7 +21,7 @@ function printLine(line) {
   return `${indentedKey} ${msgs}`;
 }
 
-function makeConsoleMock() {
+function makeConsoleMock(nativeConsole) {
   const history = [];
   let groupDepth = 0;
 
@@ -48,9 +48,16 @@ function makeConsoleMock() {
       [printedHistory, printLine(line)].join('\n'), '');
   }
 
+  function print(...args) {
+    if (typeof nativeConsole === 'object') {
+      nativeConsole.log(...args);
+    }
+  }
+
   return {
     group,
     groupEnd,
+    print,
     printHistory,
     history: () => history,
     log: log.bind(null, LogTypes.log),
