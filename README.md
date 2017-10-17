@@ -29,7 +29,7 @@ npm install --save-dev consolemock
 ## API
 
 ```js
-import { makeConsoleMock } from 'consolemock';
+import makeConsoleMock from 'consolemock';
 
 console = makeConsoleMock();
 ```
@@ -97,7 +97,7 @@ Logs messages to the console when debugging. Provide `makeConsoleMock` with the
 native `console` object when creating the mock:
 
 ```js
-import { makeConsoleMock } from 'consolemock';
+import makeConsoleMock from 'consolemock';
 
 console = makeConsoleMock(console);
 ```
