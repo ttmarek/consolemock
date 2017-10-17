@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PRINT calling .print() incorrectly throws a helpful error message 1`] = `
+"[consolemock]
+You called .print without giving makeConsoleMock a native console object:
+  import { makeConsoleMock } from 'consolemock';
+  console = makeConsoleMock(console);"
+`;

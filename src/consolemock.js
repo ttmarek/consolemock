@@ -52,6 +52,13 @@ function makeConsoleMock(nativeConsole) {
   function print(...args) {
     if (typeof nativeConsole === 'object') {
       nativeConsole.log(...args);
+    } else {
+      throw new Error([
+        '[consolemock]',
+        'You called .print without giving makeConsoleMock a native console object:',
+        "  import { makeConsoleMock } from 'consolemock';",
+        '  console = makeConsoleMock(console);',
+      ].join('\n'));
     }
   }
 
