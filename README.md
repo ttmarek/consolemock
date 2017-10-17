@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-A small dev utility for testing console logs
+  <i>A tool for testing console logs</i>
 </p>
 
 <p align="center">
@@ -13,8 +13,6 @@ A small dev utility for testing console logs
   <a href="https://www.npmjs.com/package/consolemock"><img src="https://img.shields.io/npm/v/consolemock.svg"></a>
   <a href="https://github.com/ttmarek/consolemock/blob/master/LICENSE"><img src="https://img.shields.io/github/license/ttmarek/consolemock.svg"></a>
 </p>
-
-----
 
 ## Installation
 
@@ -34,7 +32,9 @@ npm install --save-dev consolemock
 import { makeConsoleMock } from 'consolemock';
 
 console = makeConsoleMock();
+```
 
+```js
 console.log('a message');
 console.group('a group');
 console.info('maybe an object?', { a: 'str', b: false, c: [1, 2, 3], d: { a: 'b' } });
@@ -78,9 +78,22 @@ GROUP a group
 INFO %c fin, font-weight: bold;"
 ```
 
+### &#x21b3; `console.clearHistory()`
+
+```js
+console.log('hello');
+console.log('world');
+
+console.clearHistory();
+
+console.log('apple');
+
+console.history() // returns [{ LOG: ['apple'] }]
+```
+
 ### &#x21b3; `console.print(message, [message1, ..., messageN])`
 
-Log messages to the console when debugging. Provide `makeConsoleMock` with the
+Logs messages to the console when debugging. Provide `makeConsoleMock` with the
 native `console` object when creating the mock:
 
 ```js
@@ -94,7 +107,7 @@ console = makeConsoleMock(console);
 ### &#x1f5f2; Use `consolemock` With Snapshot Testing
 
 The output of `printHistory` works great with
-[Jest's snapshot testing](https://facebook.github.io/jest/docs/snapshot-testing.html#content).
+[Jest's snapshot testing](http://facebook.github.io/jest/docs/en/snapshot-testing.html#snapshot-testing-with-jest).
 Create the mock console, log a few messages, then save the output of
 `printHistory` as a snapshot.
 
