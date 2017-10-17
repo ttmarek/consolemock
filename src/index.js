@@ -1,5 +1,3 @@
-const { makeConsoleMock } = require('./consolemock');
+import makeConsoleMock from './consolemock';
 
-module.exports = {
-  makeConsoleMock,
-};
+export default makeConsoleMock;

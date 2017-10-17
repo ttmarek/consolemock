@@ -1,4 +1,4 @@
-const stringifyObject = require('stringify-object');
+import printLine from './print-line';
 
 const LogTypes = {
   log: 'LOG',
@@ -7,26 +7,14 @@ const LogTypes = {
   error: 'ERROR',
 };
 
-function printLine(line) {
-  const key = Object.keys(line)[0];
-
-  const msgs = line[key].map(msg => (
-    typeof msg === 'string' ?
-      msg :
-      stringifyObject(msg, { indent: '  ', inlineCharacterLimit: 80 })
-  )).join(', ');
-
-  const indentedKey = key.split('').map(letter => (letter === '_' ? '  ' : letter)).join('');
-
-  return `${indentedKey} ${msgs}`;
-}
-
 function makeConsoleMock(nativeConsole) {
   const history = [];
   let groupDepth = 0;
 
   function prefix(str) {
-    const underscores = Array(groupDepth).fill('_').join('');
+    const underscores = Array(groupDepth)
+      .fill('_')
+      .join('');
     return underscores + str;
   }
 
@@ -44,8 +32,10 @@ function makeConsoleMock(nativeConsole) {
   }
 
   function printHistory() {
-    return history.reduce((printedHistory, line) =>
-      [printedHistory, printLine(line)].join('\n'), '');
+    return history.reduce(
+      (printedHistory, line) => [printedHistory, printLine(line)].join('\n'),
+      ''
+    );
   }
 
   /* istanbul ignore next */
@@ -53,12 +43,14 @@ function makeConsoleMock(nativeConsole) {
     if (typeof nativeConsole === 'object') {
       nativeConsole.log(...args);
     } else {
-      throw new Error([
-        '[consolemock]',
-        'You called .print without giving makeConsoleMock a native console object:',
-        "  import { makeConsoleMock } from 'consolemock';",
-        '  console = makeConsoleMock(console);',
-      ].join('\n'));
+      throw new Error(
+        [
+          '[consolemock]',
+          'You called .print without giving makeConsoleMock a native console object:',
+          "  import { makeConsoleMock } from 'consolemock';",
+          '  console = makeConsoleMock(console);',
+        ].join('\n')
+      );
     }
   }
 
@@ -80,7 +72,4 @@ function makeConsoleMock(nativeConsole) {
   };
 }
 
-module.exports = {
-  makeConsoleMock,
-  printLine,
-};
+export default makeConsoleMock;

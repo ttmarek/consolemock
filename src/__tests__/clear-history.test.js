@@ -1,5 +1,4 @@
-const { makeConsoleMock } = require('../consolemock');
-
+import makeConsoleMock from '../consolemock';
 
 describe('clearHistory()', () => {
   it('clears the mock console history', () => {

@@ -1,4 +1,4 @@
-const { makeConsoleMock } = require('../consolemock');
+import makeConsoleMock from '../consolemock';
 
 let mock;
 
@@ -12,46 +12,40 @@ describe('HISTORY', () => {
   });
 });
 
-['LOG', 'INFO', 'WARN', 'ERROR'].forEach((logType) => {
+['LOG', 'INFO', 'WARN', 'ERROR'].forEach(logType => {
   describe(logType, () => {
     describe('(msg [, subst1, ..., substN])', () => {
       it('records single messages', () => {
         mock[logType.toLowerCase()]('hello');
-        expect(mock.history()).toEqual(
-          [{ [logType]: ['hello'] }]
-        );
+        expect(mock.history()).toEqual([{ [logType]: ['hello'] }]);
       });
 
       it('records multiple messages', () => {
         mock[logType.toLowerCase()]('hello', 'world');
-        expect(mock.history()).toEqual(
-          [{ [logType]: ['hello', 'world'] }]
-        );
+        expect(mock.history()).toEqual([{ [logType]: ['hello', 'world'] }]);
       });
     });
 
     describe('(obj1 [, obj2, ..., objN])', () => {
       it('records single objects', () => {
         mock[logType.toLowerCase()]({ hello: 'world' });
-        expect(mock.history()).toEqual(
-          [{ [logType]: [{ hello: 'world' }] }]
-        );
+        expect(mock.history()).toEqual([{ [logType]: [{ hello: 'world' }] }]);
       });
 
       it('records multiple objects', () => {
         mock[logType.toLowerCase()]({ hello: 'world' }, { hello: 'planet' });
-        expect(mock.history()).toEqual(
-          [{ [logType]: [{ hello: 'world' }, { hello: 'planet' }] }]
-        );
+        expect(mock.history()).toEqual([
+          { [logType]: [{ hello: 'world' }, { hello: 'planet' }] },
+        ]);
       });
     });
 
     describe('(msg, obj)', () => {
       it('records a mix of objects and strings', () => {
         mock[logType.toLowerCase()]('hello world', { hello: 'world' });
-        expect(mock.history()).toEqual(
-          [{ [logType]: ['hello world', { hello: 'world' }] }]
-        );
+        expect(mock.history()).toEqual([
+          { [logType]: ['hello world', { hello: 'world' }] },
+        ]);
       });
     });
   });
@@ -80,16 +74,12 @@ describe('MULTILINE', () => {
 describe('GROUP', () => {
   it('records a group title', () => {
     mock.group('some group');
-    expect(mock.history()).toEqual([
-      { GROUP: ['some group'] },
-    ]);
+    expect(mock.history()).toEqual([{ GROUP: ['some group'] }]);
   });
 
   it('records multiple title messages', () => {
     mock.group('some group', 'color: red;');
-    expect(mock.history()).toEqual([
-      { GROUP: ['some group', 'color: red;'] },
-    ]);
+    expect(mock.history()).toEqual([{ GROUP: ['some group', 'color: red;'] }]);
   });
 
   it('records logs nested under the group (w/o groupEnd)', () => {

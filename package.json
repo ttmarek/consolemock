@@ -6,6 +6,7 @@
   "scripts": {
     "test": "yarn run lint && jest --watch",
     "lint": "eslint src",
+    "prettier": "prettier --single-quote --trailing-comma es5 --write \"{src,__{tests,mocks}__}/**/*.js\"",
     "check": "yarn run lint && jest --coverage",
     "build": "babel src --out-dir lib --ignore __tests__",
     "prepublish": "yarn run build"
@@ -25,21 +26,22 @@
     "test"
   ],
   "author": "Thomas Marek",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/ttmarek/consolemock.git"
   },
   "devDependencies": {
-    "babel-cli": "^6.23.0",
-    "babel-loader": "^6.4.0",
-    "babel-preset-latest": "^6.22.0",
-    "eslint": "^3.17.1",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.0",
-    "jest": "^19.0.2"
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "jest": "^21.2.1",
+    "prettier": "1.7.4"
   },
   "jest": {
     "coverageThreshold": {
