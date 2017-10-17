@@ -62,11 +62,16 @@ function makeConsoleMock(nativeConsole) {
     }
   }
 
+  function clearHistory() {
+    history.length = 0;
+  }
+
   return {
     group,
     groupEnd,
     print,
     printHistory,
+    clearHistory,
     history: () => history,
     log: log.bind(null, LogTypes.log),
     info: log.bind(null, LogTypes.info),
