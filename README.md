@@ -80,9 +80,8 @@ INFO %c fin, font-weight: bold;"
 
 ### &#x21b3; `console.print(message, [message1, ..., messageN])`
 
-Use this to bypass the mock and log messages to the console when debugging. In
-order to use this method you **must** provide the `console` object when calling
-`makeConsoleMock`:
+Log messages to the console when debugging. Provide `makeConsoleMock` with the
+native `console` object when creating the mock:
 
 ```js
 import { makeConsoleMock } from 'consolemock';
