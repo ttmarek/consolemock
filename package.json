@@ -11,9 +11,6 @@
     "build": "babel src --out-dir lib --ignore __tests__",
     "prepublish": "yarn run build"
   },
-  "engines": {
-    "node": ">=6.9.1"
-  },
   "files": [
     "lib",
     "src"
