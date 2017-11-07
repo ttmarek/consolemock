@@ -104,7 +104,7 @@ console = makeConsoleMock(console);
 
 ## Uses
 
-### &#x1f5f2; Use `consolemock` With Snapshot Testing
+### &#x26A1; Use `consolemock` With Snapshot Testing
 
 The output of `printHistory` works great with
 [Jest's snapshot testing](http://facebook.github.io/jest/docs/en/snapshot-testing.html#snapshot-testing-with-jest).
