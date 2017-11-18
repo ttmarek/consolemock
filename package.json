@@ -9,7 +9,7 @@
     "prettier": "prettier --single-quote --trailing-comma es5 --write \"{src,__{tests,mocks}__}/**/*.js\"",
     "check": "yarn run lint && jest --coverage",
     "build": "babel src --out-dir lib --ignore __tests__",
-    "prepublish": "yarn run build"
+    "prepublishOnly": "yarn run build"
   },
   "files": [
     "lib",
