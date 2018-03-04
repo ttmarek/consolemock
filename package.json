@@ -1,6 +1,6 @@
 {
   "name": "consolemock",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A tool for testing console logs",
   "main": "lib/index.js",
   "typings": "./index.d.ts",
