@@ -10,5 +10,6 @@ GROUP a group
   GROUP %c a nested group with styling, color: #1da1f2; font-weight: bold;
     LOG %c a nested log with styling, color: #D63230;
   LOG almost done
-INFO %c fin, font-weight: bold;"
+INFO %c fin, font-weight: bold;
+DEBUG some debug statement"
 `;

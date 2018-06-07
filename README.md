@@ -46,6 +46,7 @@ console.groupEnd();
 console.log('almost done');
 console.groupEnd();
 console.info('%c fin', 'font-weight: bold;');
+console.debug('some debug statement');
 ```
 
 ### &#x21b3; `console.history();`
@@ -60,7 +61,8 @@ console.info('%c fin', 'font-weight: bold;');
   { _GROUP: ['%c a nested group with styling', 'color: #1da1f2; font-weight: bold;'] },
   { __LOG: ['%c a nested log with styling', 'color: #D63230;'] },
   { _LOG: ['almost done'] },
-  { INFO: ['%c fin', 'font-weight: bold;'] }
+  { INFO: ['%c fin', 'font-weight: bold;'] },
+  { DEBUG: ['some debug statement'] }
 ]
 ```
 
@@ -75,7 +77,8 @@ GROUP a group
   GROUP %c a nested group with styling, color: #1da1f2; font-weight: bold;
     LOG %c a nested log with styling, color: #D63230;
   LOG almost done
-INFO %c fin, font-weight: bold;"
+INFO %c fin, font-weight: bold;
+DEBUG some debug statement"
 ```
 
 ### &#x21b3; `console.clearHistory()`
