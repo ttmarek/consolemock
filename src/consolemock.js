@@ -5,6 +5,7 @@ const LogTypes = {
   info: 'INFO',
   warn: 'WARN',
   error: 'ERROR',
+  debug: 'DEBUG',
 };
 
 function makeConsoleMock(nativeConsole) {
@@ -69,6 +70,7 @@ function makeConsoleMock(nativeConsole) {
     info: log.bind(null, LogTypes.info),
     warn: log.bind(null, LogTypes.warn),
     error: log.bind(null, LogTypes.error),
+    debug: log.bind(null, LogTypes.debug),
   };
 }
 

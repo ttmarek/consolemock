@@ -23,6 +23,7 @@ describe('printHistory()', () => {
     mock.log('almost done');
     mock.groupEnd();
     mock.info('%c fin', 'font-weight: bold;');
+    mock.debug('some debug statement');
 
     expect(mock.printHistory()).toMatchSnapshot();
   });
