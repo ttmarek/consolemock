@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.codacy.com/app/ttmarek/consolemock/dashboard"><img src="https://img.shields.io/codacy/grade/f9594cea653f45d8992bedc95999ed99.svg"></a>
+  <a href="https://www.npmjs.com/package/consolemock"><img src="https://img.shields.io/npm/dy/consolemock.svg"></a>
   <a href="https://www.npmjs.com/package/consolemock"><img src="https://img.shields.io/npm/v/consolemock.svg"></a>
   <a href="https://github.com/ttmarek/consolemock/blob/master/LICENSE"><img src="https://img.shields.io/github/license/ttmarek/consolemock.svg"></a>
 </p>
